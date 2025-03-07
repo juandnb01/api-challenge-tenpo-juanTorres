@@ -4,7 +4,7 @@ Esta aplicación es una API REST desarrollada en Spring Boot (Java 21) que imple
 
 - **Cálculo con porcentaje dinámico:** Recibe dos números, los suma y aplica un porcentaje adicional obtenido de un servicio externo (o de la caché).
 - **Caché del porcentaje:** Almacena el porcentaje en memoria durante 30 minutos y lo utiliza en caso de fallo del servicio externo.
-- **Historial de llamadas:** Registra de forma asíncrona las llamadas a la API, incluyendo fecha, endpoint, parámetros y respuesta/error. Se recomienda la paginación en entornos con muchos registros.
+- **Historial de llamadas:** Registra de forma asíncrona las llamadas a la API, incluyendo fecha, endpoint, parámetros y respuesta/error.
 
 ## Tecnologías utilizadas
 
@@ -104,5 +104,23 @@ Esta aplicación es una API REST desarrollada en Spring Boot (Java 21) que imple
        }
      ]
      ```
+Colección de Postman
+
+Para facilitar las pruebas, he exportado una colección de Postman con los endpoints de la API.
+
+📥 Descargar colección
+
+Challenge Backend - API REST en Spring Boot - tenpo.postman_collection.json
+
+🔹 Pasos para importar en Postman:
+
+Descarga el archivo desde la raiz del repositorio del proyecto en la carpeta collections/Challenge Backend - API REST en Spring Boot - tenpo.postman_collection.json
+
+Abre Postman y ve a File > Import.
+
+Selecciona el archivo descargado y Postman cargará los endpoints automáticamente.
+
+Una vez importada, podrás probar los endpoints directamente en Postman. 
+
 
 

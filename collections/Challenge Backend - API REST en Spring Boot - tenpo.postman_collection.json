@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "a103d853-e8cc-4605-95ee-d34f0939c885",
+		"name": "Challenge Backend - API REST en Spring Boot - tenpo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15937322"
+	},
+	"item": [
+		{
+			"name": "Cálculo con porcentaje dinámico",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8007/api/calculate?num1=13&num2=412431",
+					"host": [
+						"localhost"
+					],
+					"port": "8007",
+					"path": [
+						"api",
+						"calculate"
+					],
+					"query": [
+						{
+							"key": "num1",
+							"value": "13"
+						},
+						{
+							"key": "num2",
+							"value": "412431"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Caché del porcentaje",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8007/api/percentage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8007",
+					"path": [
+						"api",
+						"percentage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Historial de llamadas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8007/api/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8007",
+					"path": [
+						"api",
+						"history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
