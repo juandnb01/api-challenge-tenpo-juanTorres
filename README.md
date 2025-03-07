@@ -33,8 +33,8 @@ Esta aplicación es una API REST desarrollada en Spring Boot (Java 21) que imple
 1. **Clonar el repositorio**
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_REPOSITORIO>
+   git clone https://github.com/juandnb01/api-challenge-tenpo-juanTorres
+   cd api-challenge-tenpo-juanTorres
    ```
 
 2. **Construir y levantar los contenedores con Docker Compose**
@@ -47,9 +47,9 @@ Esta aplicación es una API REST desarrollada en Spring Boot (Java 21) que imple
 
    Este comando realizará las siguientes acciones:
 
-    - **Construcción de la imagen de la API:** El Dockerfile utiliza una etapa de compilación (con Maven) y otra de ejecución (con OpenJDK) para generar la imagen que contiene el JAR compilado.
-    - **Inicio del contenedor PostgreSQL:** Se levanta un contenedor basado en la imagen oficial de PostgreSQL, configurado con las variables de entorno necesarias y un volumen para persistir los datos.
-    - **Inicio del contenedor de la API:** El contenedor de la API se levanta y se conecta a la red `my-network`, asegurando que la aplicación se comunique con la base de datos.
+   - **Construcción de la imagen de la API:** El Dockerfile utiliza una etapa de compilación (con Maven) y otra de ejecución (con OpenJDK) para generar la imagen que contiene el JAR compilado.
+   - **Inicio del contenedor PostgreSQL:** Se levanta un contenedor basado en la imagen oficial de PostgreSQL, configurado con las variables de entorno necesarias y un volumen para persistir los datos.
+   - **Inicio del contenedor de la API:** El contenedor de la API se levanta y se conecta a la red `my-network`, asegurando que la aplicación se comunique con la base de datos.
 
 3. **Acceder a la aplicación**
 
@@ -61,47 +61,48 @@ Esta aplicación es una API REST desarrollada en Spring Boot (Java 21) que imple
 
    Puedes utilizar herramientas como Postman para probar los endpoints:
 
-    - **Cálculo con porcentaje dinámico:**
+   - **Cálculo con porcentaje dinámico:**
 
-      ```http
-      GET http://localhost:8007/api/calculate?num1=10&num2=20
-      ```
+     ```http
+     GET http://localhost:8007/api/calculate?num1=10&num2=20
+     ```
 
-      Respuesta esperada (ejemplo):
+     Respuesta esperada (ejemplo):
 
-      ```json
-      {
-        "sum": 30.0,
-        "percentage": 10.0,
-        "result": 33.0
-      }
-      ```
+     ```json
+     {
+       "sum": 30.0,
+       "percentage": 10.0,
+       "result": 33.0
+     }
+     ```
 
-    - **Consulta del porcentaje actual:**
+   - **Consulta del porcentaje actual:**
 
-      ```http
-      GET http://localhost:8007/api/percentage
-      ```
+     ```http
+     GET http://localhost:8007/api/percentage
+     ```
 
-    - **Historial de llamadas:**
+   - **Historial de llamadas:**
 
-      Primero, realiza algunas llamadas a `/api/calculate` para generar registros y luego consulta:
+     Primero, realiza algunas llamadas a `/api/calculate` para generar registros y luego consulta:
 
-      ```http
-      GET http://localhost:8007/api/history
-      ```
+     ```http
+     GET http://localhost:8007/api/history
+     ```
 
-      Respuesta esperada (ejemplo):
+     Respuesta esperada (ejemplo):
 
-      ```json
-      [
-        {
-          "id": 1,
-          "endpoint": "/api/calculate",
-          "parameters": "num1=10&num2=20",
-          "response": "CalculationResponse{sum=30.0, percentage=10.0, result=33.0}",
-          "timestamp": "2025-03-07T14:30:00"
-        }
-      ]
-      ```
+     ```json
+     [
+       {
+         "id": 1,
+         "endpoint": "/api/calculate",
+         "parameters": "num1=10&num2=20",
+         "response": "CalculationResponse{sum=30.0, percentage=10.0, result=33.0}",
+         "timestamp": "2025-03-07T14:30:00"
+       }
+     ]
+     ```
+
 
