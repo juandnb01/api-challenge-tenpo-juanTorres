@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_DB: api_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sasa
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - my-network
+
+  api-challengeTenpo:
+    image: api-challenge-tenpo
+    container_name: api-challenge-tenpo
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/api_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: sasa
+    ports:
+      - "8007:8007"
+    networks:
+        - my-network
+
+volumes:
+  postgres_data:
+
+networks:
+  my-network:
+    driver: bridge
